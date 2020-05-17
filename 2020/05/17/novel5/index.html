@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LeetCode刷题】寻找数组的中心索引, 青枫阁">
+    <meta name="keywords" content="第五章 涂山, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LeetCode刷题】寻找数组的中心索引 | 青枫阁</title>
+    <title>第五章 涂山 | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LeetCode刷题】寻找数组的中心索引</h1>
+                    <h1 class="description center-align post-title">第五章 涂山</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                <span class="chip bg-color">狐妖同人</span>
                             </a>
                         
                     </div>
@@ -462,61 +462,79 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目：寻找数组的中心索引"><a href="#题目：寻找数组的中心索引" class="headerlink" title="题目：寻找数组的中心索引"></a>题目：寻找数组的中心索引</h1><p>给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。<br>我们是这样定义数组中心索引的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。<br>如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。</p>
-<h2 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h2><pre><code>输入: 
-nums = [1, 7, 3, 6, 5, 6]
-输出: 3
-解释: 
-索引3 (nums[3] = 6) 的左侧数之和(1 + 7 + 3 = 11)，与右侧数之和(5 + 6 = 11)相等。
-同时, 3 也是第一个符合要求的中心索引。</code></pre><h2 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h2><pre><code>输入: 
-nums = [1, 2, 3]
-输出: -1
-解释: 
-数组中不存在满足此条件的中心索引。</code></pre><p><strong>说明：</strong></p>
-<ul>
-<li>nums 的长度范围为 [0, 10000]。 </li>
-<li>任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。</li>
-</ul>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
-<li>首先，用一个for循环遍历得到整个数组的和num;</li>
-<li>然后，左边的和乘以2，再加上中心索引的值，即等于数组和</li>
-<li><h2 id="代码（C-）"><a href="#代码（C-）" class="headerlink" title="代码（C++）"></a>代码（C++）</h2></li>
-</ul>
-<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//C++版</span>
-<span class="token keyword">int</span> <span class="token function">pivotIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> numsSize<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">,</span>left_sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>numsSize<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        sum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-   <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>numsSize<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token punctuation">(</span>left_sum<span class="token operator">*</span><span class="token number">2</span> <span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> i<span class="token punctuation">;</span>
-        left_sum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://img-blog.csdnimg.cn/20200512110138862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODEwOTkx,size_16,color_FFFFFF,t_70" alt="运行结果"></p>
-<h2 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#Python版</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">pivotIndex</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        sum1 <span class="token operator">=</span> sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        left_sum <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> j <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> left_sum <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> j <span class="token operator">==</span> sum1<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> i
-            left_sum <span class="token operator">+=</span> j
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span></code></pre>
-
+                <p>　　　<img src="F:\image_blog\u=3587384668,2693347771&amp;fm=26&amp;gp=0.jpg" style="zoom:150%;" /></p>
+<p>​    　一处群山缭绕，湖水相傍的地方，有一座巍峨的巨大城墙，绵延数千米。</p>
+<p>　　城墙的正中央，题有一牌匾，其名为……</p>
+<p>　　涂山！</p>
+<p>　　进入城内，从高空俯视，可以看到一颗参天巨树竖立在正中央的一处湖心小岛上，高耸入云，繁茂的枝叶犹如张开的伞盖，遮天蔽日。</p>
+<p>　　粉紫色的，如蒲扇般的奇异树叶抑或是花朵，一片片飘落在空中，犹如梦幻一般，笼罩着这一片天地，好似人间仙境。</p>
+<p>　　这就是涂山的苦情巨树！</p>
+<p>　　围绕着苦情树的是一栋栋古朴典雅的木屋，一环又一环，如同众星捧月般拱卫着它。</p>
+<p>　　而在其中的一间木屋里，东方白闭着双眼，安静的躺在一张木床上。</p>
+<p>　　床侧正站立着两名少女。</p>
+<p>　　其中一名有着翠绿色长发的小萝莉担心的望着东方白，看他仍是不醒，有些忧虑的转向另一名三眼女子。</p>
+<p>　　“灵姐姐，大哥哥没有事吧？”</p>
+<p>　　“小容容不要担心，你的大哥哥只是灵力枯竭而已，没有大碍的。”</p>
+<p>　　有着妖界医师之称的水蛭精一族的族长―翠玉灵，她拍着涂山容容的小脑袋，柔声安慰。</p>
+<p>　　“哦，没有事吗？那大哥哥怎么还不醒啊？”</p>
+<p>　　“小容容实在担心，那灵姐姐就用我水蛭一族的独门秘法给你的大哥哥治疗好不好？”</p>
+<p>　　“嗯嗯，谢谢灵姐姐！”</p>
+<p>　　既然答应了涂山容容，翠玉灵就没打算糊弄她。</p>
+<p>　　……</p>
+<p>　　“姐姐……不要……”</p>
+<p>　　“怎么了？小白……你不愿意和姐姐做吗？”</p>
+<p>　　“不是！只是……唔！”</p>
+<p>　　东方白震惊的瞪大了眼睛，他没想到东方淮竹竟然会直接吻上来……</p>
+<p>　　软软的……</p>
+<p>　　滑滑的……</p>
+<p>　　就好像吃果冻一样！</p>
+<p>　　原来这就是接吻的感觉吗？</p>
+<p>　　好……好舒服！</p>
+<p>　　东方白缓缓睁开眼睛……</p>
+<p>　　眼前美丽动人的姐姐突然变成一张明显不是人类的丑陋东西！</p>
+<p>　　“啊啊啊啊！！！！”</p>
+<p>　　撕声裂肺的惨叫声穿破天空……</p>
+<p>　　“死虫子！你……你不要过来啊！！再过来我就要烧你了！”</p>
+<p>　　东方白此时心里充满了恐惧……</p>
+<p>　　退到床头，才看了个清楚，自己亲的哪里是美丽动人的姐姐，根本就是一条丑陋粗大的绿色虫子……</p>
+<p>　　想到刚刚的“舒服”触感……</p>
+<p>　　“呕！”</p>
+<p>　　胃里就是一阵翻江倒海！</p>
+<p>　　“别，别动手啊！我是在给你治疗。”</p>
+<p>　　只是一眨眼，虫子揺身一变，在东方白不敢置信的目光下，竟然直接化为一名美丽动人的女子！</p>
+<p>　　绿衣罗衫，巧笑嫣然……</p>
+<p>　　“姐姐……”</p>
+<p>　　东方白右手心燃起的血色火焰不知不觉熄灭了。</p>
+<p>　　“姐姐？”</p>
+<p>　　翠玉灵歪着头，纤纤玉指点在嘴唇上，好奇不已。</p>
+<p>　　话说，之前给他治疗时，依稀也听到他一直喊着姐姐……</p>
+<p>　　难不成……</p>
+<p>　　“对不起！我认错人了！还要谢谢姑娘为我疗伤，想必姑娘就是来自有着妖界医师之称的水蛭一族吧？”</p>
+<p>　　东方白也是从恍惚中清醒过来，翠玉灵的温婉的气质竟然让他错认是东方淮竹……</p>
+<p>　　一时间竟然分不清梦境和现实了。</p>
+<p>　　翠玉灵看着抱拳道谢的少年，同样对他很是好奇。</p>
+<p>　　“你怎么知道认出我是水蛭一族的？刚刚不还说我是虫子吗”</p>
+<p>　　糟糕！</p>
+<p>　　东方白身子一僵，他总不能告诉她自己是看过动漫的吧？</p>
+<p>　　正当想不出理由时，突然脑子里一道闪光，眼珠子转了转，笑着回复道。</p>
+<p>　　“姑娘额心的竖瞳就是水灵之眼吧？”</p>
+<p>　　不等翠玉灵再次追问，东方白接着解释道。</p>
+<p>　　“据我所知，这世上只有两族拥有第三只眼睛，其一就是一气道盟的“天眼”杨家，这第二便只有水蛭一族才拥有的“水灵之眼”。而姑娘不可能是杨家之人，又正为我疗伤……那自然便是水蛭一族喽！”</p>
+<p>　　“公子的知识真是渊博，灵儿佩服不已！”</p>
+<p>　　“呵呵，只是看过几本书罢了，谈不上渊博。”</p>
+<p>　　“吱呀！”</p>
+<p>　　一声轻响，涂山容容端着一碗药走了进来，只一眼就看见了坐起来的东方白，脸上瞬间露出惊喜的表情。</p>
+<p>　　“大哥哥，你终于醒过来了！”</p>
+<p>　　急促的奔来，手里的汤药都似是要洒出去。</p>
+<p>　　“诶，慢点，别烫着了！”</p>
+<p>　　东方白伸手制止，小姑娘这才注意到自己手里还有汤药，放缓速度，将汤药放在房间里的圆桌上，然后又向靠着床头坐着的东方白扑了过去。</p>
+<p>　　“大哥哥，容容担心死你了！”</p>
+<p>　　一把接住身轻体柔的小容容，东方白心里也很高兴，自己前世本来就是个孤僻没朋友的孤儿，死了也没有人会记得。</p>
+<p>　　可才来到这个世界两天，就有人会这样担心自己了！</p>
+<p>　　东方白此刻的心暖暖的，冰冷的心被涂山容容这只小暖宝宝给融化了！</p>
+<p>　　“谢谢容容，大哥哥没事了！”
+　　</p>
+<img src="F:\image_blog\427440540-48c1f1b77ca4e00d.jpg" style="zoom:50%;" />
             </div>
             <hr/>
 
@@ -541,7 +559,7 @@ nums = [1, 2, 3]
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/17/leetcode4/">http://Suzukazi.github.io/2020/05/17/leetcode4/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/17/novel5/">http://Suzukazi.github.io/2020/05/17/novel5/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +597,8 @@ nums = [1, 2, 3]
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                    <span class="chip bg-color">狐妖同人</span>
                                 </a>
                             
                         </div>
@@ -752,20 +770,23 @@ nums = [1, 2, 3]
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/17/novel1/">
+                <a href="/2020/05/17/novel4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一章 东方淮竹是我姐">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="第四章 凤凰于飞，和鸣锵锵！">
                         
-                        <span class="card-title">第一章 东方淮竹是我姐</span>
+                        <span class="card-title">第四章 凤凰于飞，和鸣锵锵！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            　　
-​        “小白，姐姐会永远保护你的！”　　鹅黄色衣裙外套着竹绿色的薄衣，温婉美丽的女人正摸着自己的头，轻柔的话语中蕴藏着无比的坚定！　　好温暖！　　是谁？　　她是谁？！　　东方白不知道为什么自己在临死前眼前会出现这样一位女子
+                            　　　
+   　“诸天神火系统？！”
+　　东方白震惊了！他没想到这个时候自己的金手指竟然开启了！
+　　不过，没有时间多想，他眼见着涂山红红快弯下来的腰，知道现在不是纠结的时候，急忙催促。
+　　“你是我的系统是吧？不管你有什么用，现在能不能快
                         
                     </div>
                     <div class="publish-info">
@@ -798,22 +819,23 @@ nums = [1, 2, 3]
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/17/leetcode3/">
+                <a href="/2020/05/17/novel6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【LeetCode刷题】加一">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="第六章 诸天神火系统">
                         
-                        <span class="card-title">【LeetCode刷题】加一</span>
+                        <span class="card-title">第六章 诸天神火系统</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目：两数之和给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
-示例：
-给定 nums =
+                            　　
+​       翠玉灵在涂山容容进来后，没多久就离开了。
+　　紧接着，东方白以身体修养为借口，将一直黏着他不放的涂山容容也哄出去。
+　　一时间，整个房间就只剩下他一人了！
+　　用灵力仔细查探了四周，并没有发现有什么人在偷窥，松了口气。
                         
                     </div>
                     <div class="publish-info">
@@ -831,8 +853,8 @@ nums = [1, 2, 3]
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/leetcode/">
-                        <span class="chip bg-color">leetcode</span>
+                    <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                        <span class="chip bg-color">狐妖同人</span>
                     </a>
                     
                 </div>

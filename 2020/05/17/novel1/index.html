@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LeetCode刷题】寻找数组的中心索引, 青枫阁">
+    <meta name="keywords" content="第一章 东方淮竹是我姐, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LeetCode刷题】寻找数组的中心索引 | 青枫阁</title>
+    <title>第一章 东方淮竹是我姐 | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LeetCode刷题】寻找数组的中心索引</h1>
+                    <h1 class="description center-align post-title">第一章 东方淮竹是我姐</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                <span class="chip bg-color">狐妖同人</span>
                             </a>
                         
                     </div>
@@ -462,61 +462,9 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目：寻找数组的中心索引"><a href="#题目：寻找数组的中心索引" class="headerlink" title="题目：寻找数组的中心索引"></a>题目：寻找数组的中心索引</h1><p>给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。<br>我们是这样定义数组中心索引的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。<br>如果数组不存在中心索引，那么我们应该返回 -1。如果数组有多个中心索引，那么我们应该返回最靠近左边的那一个。</p>
-<h2 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h2><pre><code>输入: 
-nums = [1, 7, 3, 6, 5, 6]
-输出: 3
-解释: 
-索引3 (nums[3] = 6) 的左侧数之和(1 + 7 + 3 = 11)，与右侧数之和(5 + 6 = 11)相等。
-同时, 3 也是第一个符合要求的中心索引。</code></pre><h2 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h2><pre><code>输入: 
-nums = [1, 2, 3]
-输出: -1
-解释: 
-数组中不存在满足此条件的中心索引。</code></pre><p><strong>说明：</strong></p>
-<ul>
-<li>nums 的长度范围为 [0, 10000]。 </li>
-<li>任何一个 nums[i] 将会是一个范围在 [-1000, 1000]的整数。</li>
-</ul>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
-<li>首先，用一个for循环遍历得到整个数组的和num;</li>
-<li>然后，左边的和乘以2，再加上中心索引的值，即等于数组和</li>
-<li><h2 id="代码（C-）"><a href="#代码（C-）" class="headerlink" title="代码（C++）"></a>代码（C++）</h2></li>
-</ul>
-<pre class=" language-c"><code class="language-c"><span class="token comment" spellcheck="true">//C++版</span>
-<span class="token keyword">int</span> <span class="token function">pivotIndex</span><span class="token punctuation">(</span><span class="token keyword">int</span><span class="token operator">*</span> nums<span class="token punctuation">,</span> <span class="token keyword">int</span> numsSize<span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">int</span> i<span class="token punctuation">,</span>left_sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>numsSize<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        sum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-   <span class="token keyword">for</span> <span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&lt;</span>numsSize<span class="token punctuation">;</span> <span class="token operator">++</span>i<span class="token punctuation">)</span>
-    <span class="token punctuation">{</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token punctuation">(</span>left_sum<span class="token operator">*</span><span class="token number">2</span> <span class="token operator">+</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-            <span class="token keyword">return</span> i<span class="token punctuation">;</span>
-        left_sum <span class="token operator">+</span><span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-
-    <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span>
-</code></pre>
-<h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://img-blog.csdnimg.cn/20200512110138862.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODEwOTkx,size_16,color_FFFFFF,t_70" alt="运行结果"></p>
-<h2 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#Python版</span>
-<span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">pivotIndex</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-        <span class="token triple-quoted-string string">"""
-        :type nums: List[int]
-        :rtype: int
-        """</span>
-        sum1 <span class="token operator">=</span> sum<span class="token punctuation">(</span>nums<span class="token punctuation">)</span>
-        left_sum <span class="token operator">=</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> i<span class="token punctuation">,</span> j <span class="token keyword">in</span> enumerate<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> left_sum <span class="token operator">*</span> <span class="token number">2</span> <span class="token operator">+</span> j <span class="token operator">==</span> sum1<span class="token punctuation">:</span>
-                <span class="token keyword">return</span> i
-            left_sum <span class="token operator">+=</span> j
-        <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span></code></pre>
-
+                <p>　　<img src="F:%5Cimage_blog%5C001.png" alt=""></p>
+<p>​        “小白，姐姐会永远保护你的！”<br>　　鹅黄色衣裙外套着竹绿色的薄衣，温婉美丽的女人正摸着自己的头，轻柔的话语中蕴藏着无比的坚定！<br>　　好温暖！<br>　　是谁？<br>　　她是谁？！<br>　　东方白不知道为什么自己在临死前眼前会出现这样一位女子，明明不认识，却又这般熟悉……<br>　　姐姐？<br>　　自己能有姐姐吗？明明只是一个死后无人记得的孤儿而已。<br>　　……<br>　　“啊！！”<br>　　猛得睁开眼，犹如刚做了场恶梦一般，东方白满头大汗。<br>　　“呼……呼……”<br>　　急促的大口大口喘息着，只感觉浑身上下说不出的疼痛！<br>　　自己这是从车祸中活了下来了吗？<br>　　不对！<br>　　东方白忍着身体的剧痛，四处打量周围的情况，这里不是自己想像中的医院，而是一间破旧的寺庙。<br>　　而且……<br>　　低头看绑在自己身上的诡异绳索……<br>　　自己是在绑架了吗？！<br>　　竟然还关在笼子里……<br>　　“啊啊啊！！”<br>　　突然脑袋又是一阵抽痛袭来，如同千万根钢针在向里扎一般，一大段不属于东方白的记忆向东方白脑海里硬塞进来。<br>　　神火山庄……纯质阳炎……东方家族……<br>　　我是东方小白！<br>　　修不出纯质阳炎的废物？<br>　　姐姐……东方淮竹？！<br>　　强烈的记忆冲击下，东方白再次晕了过去。<br>　　“怎么了？大晚上鬼叫什么？好哇！原来是你这小子！本来还担心一不小心把你弄死了，就卖不出去了！看来是白天还没揍够呀？”<br>　　突然出现的八字胡道人，满脸凶狠，见将自己大半夜吵醒的人，就是白天遇到的那个东方灵族的小子，一时气得又撂起袖子来，显然是准备再打一顿。<br>　　“师兄，我们可不能再打了，再打下去，这个东方家的小子就死了！死了可就不值钱了！”<br>　　出现的另一名小道士出声阻拦，抬起的脸上布满疤痕，扯动嘴角笑起来的样子，无比的狰狞，连八字胡道人都被他吓了一跳。<br>　　“我说过多少遍了！别用你这张脸对着我！还有，你在门派里不过是个打杂的，还敢称呼我为师兄？在外面要叫我道爷！”<br>　　一脚踹开，八字胡道人满脸不爽，不过显然也知道小道士说的没有错。<br>　　他好不容易碰到了一个东方家的小子，不能还没在黑市卖个好价钱就先被自己打死了！<br>　　那就损失大了！<br>　　“哎呦，好疼呀！师……道爷！我知道错了！”<br>　　虽然被狠狠踹到墙上，小道士爬起来没有任何不满，扯着那张狰狞的脸，讨好的赔笑着。<br>　　“哼！下不为例！”<br>　　“是是，小的一定谨记。谢谢道爷宽宏大量！”<br>　　小道士连连作揖，八字胡道人见他还算恭敬，也没有再计较，刚准备回前厅接着睡觉，可突然看到另外两个笼子里，自己从涂山捕捉到的幼年狐妖……<br>　　看见翠绿色头发那只柔柔弱弱的样子，不由眼睛一亮，一股邪意从心中涌了上来。<br>　　“这只狐妖长得还真不错，长夜漫漫，刚好被那个小子吵醒，不如让她见识一下道爷的大宝贝……！”<br>　　“嘿嘿”怪笑着的同时，还顺便伸手解起了腰带。<br>　　“吼！！！”<br>　　“别碰她！！有种冲我来！！”<br>　　另一个笼子里的涂山红红本就警惕的盯着两个人类道士，她本以为已经没事了，没想到中年道士竟然盯上了自己的妹妹！<br>　　“瞎叫唤什么？！吵死了！等我让你妹妹尝过我的宝贝后，下一个就轮到你了！到时候一定让你爽死！”<br>　　“啊啊啊啊！！放开她！！！”<br>　　“嘿嘿，道爷，你可不能着急啊！我们都知道，狐妖可是能在天仙院卖出一个好价钱啊！尤其是没动过的，那可是一个天价啊！”<br>　　刀疤脸小道士又在关键时刻跳出来阻拦。<br>　　“……”<br>　　中年道士脸色阴晴不定，一只手就这样抓着解了一半的腰带，站着纠结了半天，最后还是天价的银两战胜了自己的色l欲。<br>　　“彭！”<br>　　“哎呦！疼！”<br>　　“就算你讲得有理，也轮不到你对我指手画脚！我去睡了！你小子可不许动货物！”狠狠揍了他一拳，又恶狠狠的威胁道。<br>　　“是，道爷！您放心！给我十个胆我也不敢动您的东西。”<br>　　见小道士这般懂事，中年道士满意的点点头，再次回到前厅去休息了。<br>　　小道士跟着他也走了。<br>　　一时间，昏黄的烛火下，只剩下三个铁笼子的影子静静的在破旧的墙上摇曳着。<br>　　“姐姐，这位恩公没事吧？要不是我，他也不会被那两个坏人抓到的。”<br>　　拥有翠绿色秀发的涂山容容，自责的望着隔壁笼子的东方白。白天的时候，被坏道士的克妖符贴住时，如果不是自己疼的大叫出声，这位小公子也不会因为想救自己而被坏道士抓住！<br>　　姐姐也是！如果不是自己这个累赘，姐姐一个人一定不会被他们抓住的！<br>　　“哇！！姐姐，都怪容容，是容容没有好好修炼！不然姐姐和恩公也不会被抓住了！”<br>　　“容容不哭，姐姐一定救你出去的！啊啊啊啊！”<br>　　涂山红红不顾贴满全身的克妖符，强忍着妖力反噬的痛苦，强行催动妖力，两只手疯狂的用力拉着笼子，想要拉开。<br>　　“姐姐，不要！你这样会死的！”<br>　　涂山容容看着自己姐姐满脸痛苦的表情，却仍旧睁大眼睛，用力拉扯着笼子，她从来没有一刻如此时这般痛恨自己！<br>　　如果，自己能再强一点，姐姐就不会为了救自己拼尽性命了！<br>　　“唔……这里是哪里？”<br>　　这时候，东方白再次苏醒过来了。<br>　　“恩公，你醒了？坏道士没有把你伤到哪里去吧？”<br>　　还没等东方白好好看清楚关心自己的小萝莉，一瞬间所有记忆都蔓上心头。<br>　　自己好像是穿越了！<br>　　没想到前一秒还是车祸，下一秒竟然一眨眼就变成了一个少年！<br>　　东方白低头看着自己的双手，他没想到自己竟然会穿越到动漫的世界里，而且……<br>　　之前那个温暖的女人，是自己的姐姐……东方淮竹吗？</p>
+<img src="F:\image_blog\1.jpg" style="zoom: 200%;" />
             </div>
             <hr/>
 
@@ -541,7 +489,7 @@ nums = [1, 2, 3]
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/17/leetcode4/">http://Suzukazi.github.io/2020/05/17/leetcode4/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/17/novel1/">http://Suzukazi.github.io/2020/05/17/novel1/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -579,8 +527,8 @@ nums = [1, 2, 3]
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                    <span class="chip bg-color">狐妖同人</span>
                                 </a>
                             
                         </div>
@@ -752,20 +700,22 @@ nums = [1, 2, 3]
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2020/05/17/novel1/">
+                <a href="/2020/05/17/novel2/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="第一章 东方淮竹是我姐">
+                        <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="第二章 你总算是来了！">
                         
-                        <span class="card-title">第一章 东方淮竹是我姐</span>
+                        <span class="card-title">第二章 你总算是来了！</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            　　
-​        “小白，姐姐会永远保护你的！”　　鹅黄色衣裙外套着竹绿色的薄衣，温婉美丽的女人正摸着自己的头，轻柔的话语中蕴藏着无比的坚定！　　好温暖！　　是谁？　　她是谁？！　　东方白不知道为什么自己在临死前眼前会出现这样一位女子
+                            　
+　　　这个世界的东方小白拥有着和东方白一模一样的容貌，唯一不同的是，他不是孤儿，而是神火山庄老庄主的二儿子。
+　　虽然是一个从外面抱回来的私生子，甚至连东方一脉的天赋神通―纯质阳炎都召唤不出来！
+　　“真的假的？东方一族的嫡系传人竟然连
                         
                     </div>
                     <div class="publish-info">
@@ -798,22 +748,19 @@ nums = [1, 2, 3]
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/17/leetcode3/">
+                <a href="/2020/05/17/leetcode4/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【LeetCode刷题】加一">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【LeetCode刷题】寻找数组的中心索引">
                         
-                        <span class="card-title">【LeetCode刷题】加一</span>
+                        <span class="card-title">【LeetCode刷题】寻找数组的中心索引</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            题目：两数之和给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
-你可以假设每种输入只会对应一个答案。但是，数组中同一个元素不能使用两遍。
-示例：
-给定 nums =
+                            题目：寻找数组的中心索引给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。我们是这样定义数组中心索引的：数组中心索引的左侧所有元素相加的和等于右侧所有元素相加的和。如果数组不存在中心索引，那么我们应该返回 -1。如
                         
                     </div>
                     <div class="publish-info">
