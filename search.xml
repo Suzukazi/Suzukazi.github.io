@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Github高级搜素技巧—寻找开源项目</title>
+      <link href="/2020/05/19/github-search/"/>
+      <url>/2020/05/19/github-search/</url>
+      
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>   学习新知识也罢，肯定会离不开开源项目，但是如何高效的在GitHub上找到开源项目吗？今天在B站看了一个关注的Up主CODESHEEP的视频，知道了一些github的骚操作。<br>      <img src="https://img-blog.csdnimg.cn/20200519160926335.jpg#pic_center" alt="在这里插入图片描述"></p><h2 id="搜素语法"><a href="#搜素语法" class="headerlink" title="搜素语法"></a>搜素语法</h2><pre class=" language-cpp"><code class="language-cpp">输入：in<span class="token operator">:</span>name springboot含义： 在搜索的内容中，搜索发布的资源的标题上面有“springboot”字样的资源数据输入：in<span class="token operator">:</span>readme springboot含义： readme中有“springboot”字样的资源数据输入：in<span class="token operator">:</span>description springboot 含义： 在搜索的内容中，描述中有“springboot”字样的资源数据输入： springboot stars<span class="token operator">:</span><span class="token operator">></span><span class="token number">3000</span>含义： 这表示搜索带有springboot文字的信息，并且stars收藏数大于<span class="token number">10000</span>的数据。输入： springboot forks<span class="token operator">:</span><span class="token operator">></span><span class="token number">1000</span>含义：在搜索结果中forks数大于<span class="token number">1000</span>的输入： springboot pushed<span class="token operator">:</span><span class="token operator">></span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">19</span>含义： 搜索结果中，在<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>时间之后还有更新数据操作的结果。输入： language<span class="token operator">:</span>java含义： 用Java编写的项目</code></pre><p>同时，还可以连在一起嵌套使用：</p><pre class=" language-cpp"><code class="language-cpp"> in<span class="token operator">:</span>name springboot stars<span class="token operator">:</span><span class="token operator">></span><span class="token number">3000</span> forks<span class="token operator">:</span><span class="token operator">></span><span class="token number">1000</span> pushed<span class="token operator">:</span><span class="token operator">></span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">19</span> language<span class="token operator">:</span>java</code></pre><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，贴上Up主程序羊的视频链接，以及一个github高级搜素的界面。<br>好了，本萌新要去找找优秀的开源项目学习去了！完结撒花~<br><img src="https://img-blog.csdnimg.cn/202005191605455.gif" alt="在这里插入图片描述"><br>B站程序羊视频教程：<a href="https://www.bilibili.com/video/BV1yJ411S7Wu" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1yJ411S7Wu</a><br>Github高级搜素：<a href="https://github.com/search/advanced" target="_blank" rel="noopener">https://github.com/search/advanced</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 菜鸟教程 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>【LeetCode刷题】螺旋矩阵</title>
       <link href="/2020/05/19/leetcode6/"/>
       <url>/2020/05/19/leetcode6/</url>

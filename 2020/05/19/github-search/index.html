@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LeetCode刷题】螺旋矩阵, 青枫阁">
+    <meta name="keywords" content="Github高级搜素技巧—寻找开源项目, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LeetCode刷题】螺旋矩阵 | 青枫阁</title>
+    <title>Github高级搜素技巧—寻找开源项目 | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LeetCode刷题】螺旋矩阵</h1>
+                    <h1 class="description center-align post-title">Github高级搜素技巧—寻找开源项目</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/">
+                                <span class="chip bg-color">菜鸟教程</span>
                             </a>
                         
                     </div>
@@ -462,103 +462,42 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="题目：螺旋矩阵"><a href="#题目：螺旋矩阵" class="headerlink" title="题目：螺旋矩阵"></a>题目：螺旋矩阵</h1><p>给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。</p>
-<h2 id="示例1："><a href="#示例1：" class="headerlink" title="示例1："></a>示例1：</h2><pre class=" language-cpp"><code class="language-cpp">输入<span class="token operator">:</span>
-<span class="token punctuation">[</span>
- <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
- <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span> <span class="token punctuation">]</span><span class="token punctuation">,</span>
- <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">,</span> <span class="token number">9</span> <span class="token punctuation">]</span>
-<span class="token punctuation">]</span>
-输出<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">]</span></code></pre>
-<h2 id="示例2："><a href="#示例2：" class="headerlink" title="示例2："></a>示例2：</h2><pre class=" language-cpp"><code class="language-cpp">输入<span class="token operator">:</span>
-<span class="token punctuation">[</span>
-  <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span><span class="token number">5</span><span class="token punctuation">,</span> <span class="token number">6</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">]</span>
-<span class="token punctuation">]</span>
-输出<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">11</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">,</span><span class="token number">9</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">,</span><span class="token number">6</span><span class="token punctuation">,</span><span class="token number">7</span><span class="token punctuation">]</span></code></pre>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ol>
-<li>首先定义方向：向下表示y正方向，向右表示x正方向;</li>
-<li>再定义两个点，分别是左上(x1,y1)和右下(x2,y2);</li>
-<li>再把循环分为四个边区间进行，分别为：上方[x1,x2]，右方[y1,y2]，下方[x2,x1]，左方[y2,y1];</li>
-<li>每循环一圈（4次），矩阵的长宽都缩短1。</li>
-</ol>
-<p><strong>解释:</strong><br><img src="https://img-blog.csdnimg.cn/20200519143215358.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODEwOTkx,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
-<h2 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">(</span>object<span class="token punctuation">)</span><span class="token operator">:</span>
-    def <span class="token function">spiralOrder</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> matrix<span class="token punctuation">)</span><span class="token operator">:</span>
-        <span class="token string">""</span>"
-        <span class="token operator">:</span>type matrix<span class="token operator">:</span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-        <span class="token operator">:</span>rtype<span class="token operator">:</span> List<span class="token punctuation">[</span><span class="token keyword">int</span><span class="token punctuation">]</span>
-        <span class="token string">""</span>"
-        #存放结果
-        result <span class="token operator">=</span> <span class="token function">list</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token keyword">if</span> <span class="token operator">not</span> matrix<span class="token operator">:</span>
-            <span class="token keyword">return</span> result
-        #数组行，列数的长度
-        row<span class="token punctuation">,</span> col <span class="token operator">=</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">len</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span>  
-        #定义矩阵的左上角坐标（x1<span class="token punctuation">,</span>y1）<span class="token punctuation">,</span>右下角坐标（x2<span class="token punctuation">,</span>y2）
-        x1<span class="token punctuation">,</span> y1<span class="token punctuation">,</span> x2<span class="token punctuation">,</span> y2 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> col<span class="token number">-1</span><span class="token punctuation">,</span> rol<span class="token number">-1</span>
-        <span class="token keyword">while</span> True<span class="token operator">:</span>
-            #从上左向上右遍历
-            <span class="token keyword">for</span> i in <span class="token function">range</span><span class="token punctuation">(</span>x1<span class="token punctuation">,</span> x2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">:</span>
-                result<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>y1<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            y1<span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span>
-            #边界判断，矩阵高度不能为<span class="token number">0</span>
-            <span class="token keyword">if</span> y1<span class="token operator">></span>y2<span class="token operator">:</span>
-                <span class="token keyword">break</span>
-            #从右上向右下
-            <span class="token keyword">for</span> j in <span class="token function">range</span><span class="token punctuation">(</span>y1<span class="token punctuation">,</span> y2<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">:</span>
-                result<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">[</span>x2<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            x2<span class="token operator">-</span><span class="token operator">=</span><span class="token number">1</span>
-            <span class="token keyword">if</span> x1<span class="token operator">></span>x2<span class="token operator">:</span>
-                <span class="token keyword">break</span>
-            #从下右向下左
-            <span class="token keyword">for</span> m in <span class="token function">range</span><span class="token punctuation">(</span>x2<span class="token punctuation">,</span> x1<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">:</span>
-                result<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>y2<span class="token punctuation">]</span><span class="token punctuation">[</span>m<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            y2<span class="token operator">-</span><span class="token operator">=</span><span class="token number">1</span>
-            <span class="token keyword">if</span> x1<span class="token operator">></span>x2<span class="token operator">:</span>
-                <span class="token keyword">break</span>
-            #从左下向左上
-            <span class="token keyword">for</span> n in <span class="token function">range</span><span class="token punctuation">(</span>y2<span class="token punctuation">,</span> y1<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">:</span>
-                result<span class="token punctuation">.</span><span class="token function">append</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>n<span class="token punctuation">]</span><span class="token punctuation">[</span>x1<span class="token punctuation">]</span><span class="token punctuation">)</span>
-            x1<span class="token operator">+</span><span class="token operator">=</span><span class="token number">1</span>
-            <span class="token keyword">if</span> x1<span class="token operator">></span>x2<span class="token operator">:</span>
-                <span class="token keyword">break</span>
-        <span class="token keyword">return</span> result</code></pre>
-<h2 id="代码（C-）"><a href="#代码（C-）" class="headerlink" title="代码（C++）"></a>代码（C++）</h2><pre class=" language-cpp"><code class="language-cpp">
-<span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> <span class="token function">spiralOrder</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span><span class="token operator">&amp;</span> matrix<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span> res<span class="token punctuation">;</span>
-        <span class="token keyword">int</span>  y1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>  y2 <span class="token operator">=</span> matrix<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">,</span>  x1 <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span>  x2 <span class="token operator">=</span> matrix<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token boolean">true</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span> x1<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span> x2<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-               res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span> y1<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+                <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>   学习新知识也罢，肯定会离不开开源项目，但是如何高效的在GitHub上找到开源项目吗？今天在B站看了一个关注的Up主CODESHEEP的视频，知道了一些github的骚操作。<br>      <img src="https://img-blog.csdnimg.cn/20200519160926335.jpg#pic_center" alt="在这里插入图片描述"></p>
+<h2 id="搜素语法"><a href="#搜素语法" class="headerlink" title="搜素语法"></a>搜素语法</h2><pre class=" language-cpp"><code class="language-cpp">输入：in<span class="token operator">:</span>name springboot
 
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span> y1<span class="token operator">></span> y2<span class="token punctuation">)</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
+含义： 在搜索的内容中，搜索发布的资源的标题上面有“springboot”字样的资源数据
 
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span> y1<span class="token punctuation">;</span>i<span class="token operator">&lt;=</span> y2<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span>
-                res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span> x2<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
 
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">--</span> x2<span class="token operator">&lt;</span> x1<span class="token punctuation">)</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
+输入：in<span class="token operator">:</span>readme springboot
 
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span> x2<span class="token punctuation">;</span>i<span class="token operator">>=</span> x1<span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span>
-                res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span> y2<span class="token punctuation">]</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+含义： readme中有“springboot”字样的资源数据
 
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">--</span> y2<span class="token operator">&lt;</span> y1<span class="token punctuation">)</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
 
-            <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">int</span> i<span class="token operator">=</span> y2<span class="token punctuation">;</span>i<span class="token operator">>=</span> y1<span class="token punctuation">;</span>i<span class="token operator">--</span><span class="token punctuation">)</span>
-                res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>matrix<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">[</span> x1<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+输入：in<span class="token operator">:</span>description springboot 
 
-            <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">++</span> x1<span class="token operator">></span> x2<span class="token punctuation">)</span>
-                <span class="token keyword">break</span><span class="token punctuation">;</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span></code></pre>
+含义： 在搜索的内容中，描述中有“springboot”字样的资源数据
+
+
+输入： springboot stars<span class="token operator">:</span><span class="token operator">></span><span class="token number">3000</span>
+
+含义： 这表示搜索带有springboot文字的信息，并且stars收藏数大于<span class="token number">10000</span>的数据。
+
+
+输入： springboot forks<span class="token operator">:</span><span class="token operator">></span><span class="token number">1000</span>
+
+含义：在搜索结果中forks数大于<span class="token number">1000</span>的
+
+
+输入： springboot pushed<span class="token operator">:</span><span class="token operator">></span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">19</span>
+含义： 搜索结果中，在<span class="token number">2020</span><span class="token operator">-</span><span class="token number">01</span><span class="token operator">-</span><span class="token number">02</span>时间之后还有更新数据操作的结果。
+
+
+输入： language<span class="token operator">:</span>java
+
+含义： 用Java编写的项目</code></pre>
+<p>同时，还可以连在一起嵌套使用：</p>
+<pre class=" language-cpp"><code class="language-cpp"> in<span class="token operator">:</span>name springboot stars<span class="token operator">:</span><span class="token operator">></span><span class="token number">3000</span> forks<span class="token operator">:</span><span class="token operator">></span><span class="token number">1000</span> pushed<span class="token operator">:</span><span class="token operator">></span><span class="token number">2020</span><span class="token operator">-</span><span class="token number">05</span><span class="token operator">-</span><span class="token number">19</span> language<span class="token operator">:</span>java</code></pre>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最后，贴上Up主程序羊的视频链接，以及一个github高级搜素的界面。<br>好了，本萌新要去找找优秀的开源项目学习去了！完结撒花~<br><img src="https://img-blog.csdnimg.cn/202005191605455.gif" alt="在这里插入图片描述"><br>B站程序羊视频教程：<a href="https://www.bilibili.com/video/BV1yJ411S7Wu" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1yJ411S7Wu</a><br>Github高级搜素：<a href="https://github.com/search/advanced" target="_blank" rel="noopener">https://github.com/search/advanced</a></p>
 
             </div>
             <hr/>
@@ -584,7 +523,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/19/leetcode6/">http://Suzukazi.github.io/2020/05/19/leetcode6/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/19/github-search/">http://Suzukazi.github.io/2020/05/19/github-search/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -622,8 +561,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/">
+                                    <span class="chip bg-color">菜鸟教程</span>
                                 </a>
                             
                         </div>
@@ -791,9 +730,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/19/github-search/">
                     <div class="card-image">
@@ -812,9 +752,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -823,6 +763,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -841,25 +782,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/18/get-my-blog/">
+                <a href="/2020/05/19/leetcode6/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Hexo+Github Pages搭建个人博客(超详细教程)">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="【LeetCode刷题】螺旋矩阵">
                         
-                        <span class="card-title">Hexo+Github Pages搭建个人博客(超详细教程)</span>
+                        <span class="card-title">【LeetCode刷题】螺旋矩阵</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            GitHub创建个人仓库第一步 注册登录到 GitHub ，如果没有 GitHub 帐号，请使用你的邮箱注册 GitHub 帐号：https://github.com
-第二步 创建一个存储库（repository）登录成功之后，点击 Git
+                            题目：螺旋矩阵给定一个包含 m x n 个元素的矩阵（m 行, n 列），请按照顺时针螺旋顺序，返回矩阵中的所有元素。
+示例1：输入:
+[
+ [ 1, 2, 3 ],
+ [ 4, 5, 6 ],
+ [ 7, 8, 9 ]
+]
+输出: [1,
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
                             </span>
                         <span class="publish-author">
                             
@@ -872,8 +819,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">菜鸟教程</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
