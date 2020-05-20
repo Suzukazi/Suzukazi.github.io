@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【每天学算法】浅谈时间复杂度和空间复杂度, 青枫阁">
+    <meta name="keywords" content="picture/start, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【每天学算法】浅谈时间复杂度和空间复杂度 | 青枫阁</title>
+    <title>picture/start | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【每天学算法】浅谈时间复杂度和空间复杂度</h1>
+                    <h1 class="description center-align post-title">picture/start</h1>
                 </div>
             </div>
         </div>
@@ -428,13 +428,9 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                    <div class="article-tag">
-                        
-                            <a href="/tags/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AA%E7%AE%97%E6%B3%95%E5%B0%8F%E7%9F%A5%E8%AF%86/">
-                                <span class="chip bg-color">每天一个算法小知识</span>
-                            </a>
-                        
-                    </div>
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
                     
                 </div>
                 <div class="col s5 right-align">
@@ -446,7 +442,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-19
+                    2020-05-20
                 </div>
                 
 
@@ -462,68 +458,62 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="什么是复杂度？"><a href="#什么是复杂度？" class="headerlink" title="什么是复杂度？"></a>什么是复杂度？</h2><p><strong>复杂度是衡量代码运行效率的重要的度量因素。</strong> 而复杂度主要就是指<strong>时间复杂度</strong>和<strong>空间复杂度</strong>。</p>
-<p>首先，<strong>时间复杂度</strong>的计算并不是计算程序具体运行的时间，而是<strong>算法执行语句的次数</strong>。当我们面前有多个算法时，我们可以通过计算时间复杂度，判断出哪一个算法在具体执行时花费时间最多和最少。<br><strong>空间复杂度</strong>则是对一个算法在运行过程中临时占用电脑存储空间大小的量度。</p>
-<p>在过去，由于计算机性能低下，系统存储空间很小，这种情况下，降低空间的损耗就极其重要了！所以，在这种情况下，程序员要考虑的就是尽可能的降低空间复杂度。</p>
-<p>但是，时间复杂度和空间复杂度往往是相对的。降低空间消耗的代价就是增加时间。</p>
-<p>而现在，硬件技术发展迅速，在强大的硬件支持下，存储空间已经不是困扰人们的问题了。这种情况下，人们要求的是更快的运行速率。再加上现在大数据盛行。牺牲廉价的空间来换取宝贵的时间就很有必要了！</p>
-<p>所以，我们现在研究的是：如何用算法有效的降低时间复杂度！</p>
-<p>好，现在我们已经了解了复杂度的作用，那应该如何去计算复杂度呢？</p>
-<h2 id="大O表示法"><a href="#大O表示法" class="headerlink" title="大O表示法"></a>大O表示法</h2><p>复杂度是一个关于输入数据量 n 的函数。<br>假设你的代码复杂度是 f(n)，那么就用个大写字母 O 和括号，把 f(n) 括起来就可以了，即 O(f(n))。例如，O(n) 表示的是，复杂度与计算实例的个数 n 线性相关；O(logn) 表示的是，复杂度与计算实例的个数 n 对数相关。<br>通常，复杂度的计算方法遵循以下几个原则：</p>
-<ul>
-<li>首先，<strong>复杂度与具体的常系数无关</strong>，例如 O(n) 和 O(2n) 表示的是同样的复杂度。我们详细分析下，O(2n) 等于O(n+n)，也等于 O(n) + O(n)。也就是说，一段 O(n) 复杂度的代码只是先后执行两遍 O(n)，其复杂度是一致的。</li>
-<li>其次，<strong>多项式级的复杂度相加的时候，选择高者作为结果</strong>，例如 O(n²)+O(n) 和 O(n²)表示的是同样的复杂度。具体分析一下就是，O(n²)+O(n) = O(n²+n)。随着 n越来越大，二阶多项式的变化率是要比一阶多项式更大的。因此，只需要通过更大变化率的二阶多项式来表征复杂度就可以了。</li>
-</ul>
-<p>值得一提的是，<strong>O(1) 也是表示一个特殊复杂度</strong>，含义为某个任务通过有限可数的资源即可完成。此处有限可数的具体意义是，<strong>与输入数据量 n 无关</strong>。</p>
-<h2 id="复杂度的计算"><a href="#复杂度的计算" class="headerlink" title="复杂度的计算"></a>复杂度的计算</h2><ul>
-<li><strong>常数阶</strong>：</li>
-</ul>
-<pre class=" language-python"><code class="language-python">int i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token number">100</span><span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-       <span class="token operator">/</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">/</span>
-    <span class="token punctuation">}</span></code></pre>
-<p>这里只循环100次。不随着输入数据量 n 增加而增长，所以，此类算法的时间复杂度是O(1)。</p>
-<ul>
-<li><strong>线性阶</strong>：</li>
-</ul>
-<pre class=" language-python"><code class="language-python">int i<span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-       <span class="token operator">/</span> <span class="token operator">*</span> <span class="token operator">*</span> <span class="token operator">/</span>
-    <span class="token punctuation">}</span></code></pre>
-<p>它是一个 for 循环，时间复杂度为 O(n) ， 因为循环体中的代码须要执行n次。</p>
-<ul>
-<li><p><strong>对数阶</strong>：</p>
-<pre class=" language-python"><code class="language-python">int count <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>
-<span class="token keyword">while</span> <span class="token punctuation">(</span>count <span class="token operator">&lt;</span> n<span class="token punctuation">)</span><span class="token punctuation">{</span>
-count <span class="token operator">=</span> count <span class="token operator">*</span> <span class="token number">2</span><span class="token punctuation">;</span>
-<span class="token operator">/</span><span class="token operator">*</span>  <span class="token operator">*</span><span class="token operator">/</span>
-<span class="token punctuation">}</span></code></pre>
-<p>由于每次 count 乘以 2 之后，就距离 n 更近了一分。 也就是说，有多少个 2 相乘后大于 n ，则会退出循环。由 2^x=n 得到x=log2(n) 。 所以这个循环的时间复杂度为O(log(n)) 。</p>
-</li>
-<li><p><strong>平方阶</strong> ：</p>
-<pre class=" language-python"><code class="language-python">int i <span class="token punctuation">,</span> j <span class="token punctuation">;</span>
- <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span> j <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> j<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
-         <span class="token operator">/</span><span class="token operator">*</span>  <span class="token operator">*</span><span class="token operator">/</span>
-     <span class="token punctuation">}</span>
- <span class="token punctuation">}</span></code></pre>
-<p>而对于外层的循环，不过是内部这个时间复杂度为 O(n)的语句，再循环 n 次 。 所以这段代码的时间复杂度为 O(n^2)。<br>如果外循环的循环次数改为了m， 时间复杂度就变为 O(m×n)。</p>
-</li>
-</ul>
-<pre class=" language-python"><code class="language-python">int i <span class="token punctuation">,</span> j <span class="token punctuation">;</span>
-    <span class="token keyword">for</span> <span class="token punctuation">(</span>i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> m<span class="token punctuation">;</span> i<span class="token operator">+</span><span class="token operator">+</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span> j <span class="token operator">=</span> <span class="token number">0</span> <span class="token punctuation">;</span> j <span class="token operator">&lt;</span> n <span class="token punctuation">;</span> j<span class="token operator">+</span><span class="token operator">+</span> <span class="token punctuation">)</span><span class="token punctuation">{</span>
-            <span class="token operator">/</span><span class="token operator">*</span>  <span class="token operator">*</span><span class="token operator">/</span>
-         <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span></code></pre>
-<p>所以我们可以总结得出，循环的时间复杂度等于循环体的复杂度乘以该循环运行的次数。</p>
-<h2 id="常见复杂度的比较"><a href="#常见复杂度的比较" class="headerlink" title="常见复杂度的比较"></a>常见复杂度的比较</h2><p>常见的时间复杂度有：<br>常数阶O(1),<br>对数阶O(log2 n),<br>线性阶O(n),<br>线性对数阶O(n log2 n),<br>平方阶O(n^2)，<br>立方阶O(n^3)<br>k次方阶O(n^K),<br>指数阶O(2^n)。<br>随着n的不断增大，时间复杂度不断增大，算法花费时间越多。<br><img src="https://img-blog.csdnimg.cn/20200519211749806.png" alt=""><br><img src="https://img-blog.csdnimg.cn/20200519211920682.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzQxODEwOTkx,size_16,color_FFFFFF,t_70" alt=""><br>为了更好理解，我们来看一些数据。假设某个计算任务需要处理 10万 条数据。你编写的代码：</p>
-<ul>
-<li>如果是 O(n²) 的时间复杂度，那么计算的次数就大概是 100 亿次左右。</li>
-<li>如果是 O(n)，那么计算的次数就是 10万 次左右。</li>
-<li>如果这个工程师再厉害一些，能在 O(log n) 的复杂度下完成任务，那么计算的次数就是 17 次左右（log 100000 =16.61，计算机通常是二分法，这里的对数可以以 2 为底去估计）。</li>
-<li>而O（1）是固定次数的计算，如：计算任务需要处理 10万 条数据，它是计算100次； 计算任务需要处理 10 条数据，它是还计算100次； 所以并不能和其他O(log n)， O(n)，O(n²) 混为一谈！<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2>OK，今天的内容到这儿就结束了。相信你对复杂度的概念有了进一步的认识。不得不说，写博客对新手的耐心真的是一个巨大的挑战！好了，祝您阅读愉快！完结撒花~<br><img src="https://img-blog.csdnimg.cn/2020051921281061.gif" alt=" "></li>
-</ul>
+                <!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>�������</title>
+		<link rel="stylesheet" href="css/index.css" />
+	<meta name="generator" content="Hexo 4.2.1"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+	<body>
+		<!--/*����������*/-->
+		<div class="wrap">
+	<!--	/*��������Ԫ�ص�����*/-->
+		<div class="cube">
+			<!--ǰ��ͼƬ -->
+			<div class="out_front">
+				<img src="img/1.jpg"  class="pic"/>
+			</div>
+			<!--����ͼƬ -->
+			<div class="out_back">
+				<img src="img/2.jpg"  class="pic"/>
+			</div>
+			<!--��ͼƬ -->
+			<div class="out_left">
+				<img src="img/3.jpg"  class="pic"/>
+			</div>
+			<div class="out_right">
+				<img src="img/4.jpg"  class="pic"/>
+			</div>
+			<div class="out_top">
+				<img src="img/5.jpg"  class="pic"/>
+			</div>
+			<div class="out_bottom">
+				<img src="img/6.jpg"  class="pic"/>
+			</div>
+			<!--С������ -->
+			<span class="in_front">
+				<img src="img/7.jpg" class="in_pic" />
+			</span>
+			<span class="in_back">
+			     <img src="img/8.jpg" class="in_pic" />
+			</span>
+			<span class="in_left">
+				<img src="img/9.jpg" class="in_pic" />
+			</span>
+			<span class="in_right">
+				<img src="img/10.jpg" class="in_pic" />
+			</span>
+			<span class="in_top">
+				<img src="img/11.jpg" class="in_pic" />
+			</span>
+			<span class="in_bottom">
+				<img src="img/12.jpg" class="in_pic" />
+			</span>
+		</div>
+		</div>
+	</body>
+</html>
 
             </div>
             <hr/>
@@ -549,7 +539,7 @@ count <span class="token operator">=</span> count <span class="token operator">*
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/19/data-structure1/">http://Suzukazi.github.io/2020/05/19/data-structure1/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/20/picture/start/">http://Suzukazi.github.io/2020/05/20/picture/start/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,11 +576,7 @@ count <span class="token operator">=</span> count <span class="token operator">*
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            
-                                <a href="/tags/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AA%E7%AE%97%E6%B3%95%E5%B0%8F%E7%9F%A5%E8%AF%86/">
-                                    <span class="chip bg-color">每天一个算法小知识</span>
-                                </a>
-                            
+                            <span class="chip bg-color">无标签</span>
                         </div>
                     
                 </div>
@@ -756,9 +742,79 @@ count <span class="token operator">=</span> count <span class="token operator">*
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2020/05/20/picture/start/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/17.jpg" class="responsive-img" alt="picture/start">
+                        
+                        <span class="card-title">picture/start</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+
+	
+		
+		�������
+		
+	
+	
+		
+		
+	
+		
+			
+			
+				
+			
+			
+			
+				
+			
+			
+			
+				
+			
+			
+				
+			
+			
+				
+			
+			
+				
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            青枫
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
             <div class="card">
                 <a href="/2020/05/20/picture/css/index/">
                     <div class="card-image">
@@ -783,46 +839,8 @@ count <span class="token operator">=</span> count <span class="token operator">*
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            青枫
-                            
-                        </span>
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2020/05/19/github-search/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="Github高级搜素技巧—寻找开源项目">
-                        
-                        <span class="card-title">Github高级搜素技巧—寻找开源项目</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            前言   学习新知识也罢，肯定会离不开开源项目，但是如何高效的在GitHub上找到开源项目吗？今天在B站看了一个关注的Up主CODESHEEP的视频，知道了一些github的骚操作。      
-搜素语法输入：in:name springb
-                        
-                    </div>
-                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
                             </span>
                         <span class="publish-author">
                             
@@ -831,14 +849,6 @@ count <span class="token operator">=</span> count <span class="token operator">*
                             
                         </span>
                     </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%8F%9C%E9%B8%9F%E6%95%99%E7%A8%8B/">
-                        <span class="chip bg-color">菜鸟教程</span>
-                    </a>
-                    
                 </div>
                 
             </div>
