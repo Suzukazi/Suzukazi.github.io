@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LeetCode刷题】三数之和, 青枫阁">
+    <meta name="keywords" content="第七章 空空如也的神火库, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LeetCode刷题】三数之和 | 青枫阁</title>
+    <title>第七章 空空如也的神火库 | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LeetCode刷题】三数之和</h1>
+                    <h1 class="description center-align post-title">第七章 空空如也的神火库</h1>
                 </div>
             </div>
         </div>
@@ -430,8 +430,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/leetcode/">
-                                <span class="chip bg-color">leetcode</span>
+                            <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                <span class="chip bg-color">狐妖同人</span>
                             </a>
                         
                     </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-20
+                    2020-05-23
                 </div>
                 
 
@@ -462,102 +462,64 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <p>@<a href="目录">TOC</a></p>
-<h1 id="题目：三数之和"><a href="#题目：三数之和" class="headerlink" title="题目：三数之和"></a>题目：三数之和</h1><p>给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。<br><strong>注意：</strong> 答案中不可以包含重复的三元组。</p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><pre class=" language-cpp"><code class="language-cpp">给定数组 nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span>，
-
-满足要求的三元组集合为：
-<span class="token punctuation">[</span>
-  <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">]</span>
-<span class="token punctuation">]</span></code></pre>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
-<li><strong>双指针法铺垫</strong>： 先将给定 nums 排序，复杂度为 O(NlogN)O(NlogN)。</li>
-<li><strong>双指针法思路：</strong> 固定 33 个指针中最左（最小）数字的指针 k，双指针 i，j 分设在数组索引<br>(k,len(nums))(k,len(nums)) 两端，通过双指针交替向中间移动，记录对于每个固定指针 k 的所有满足 nums[k]+ nums[i] + nums[j] == 0 的 i,j 组合：当 nums[k] &gt; 0 时直接break跳出：因为 nums[j] &gt;= nums[i] &gt;= nums[k] &gt; 0，即 33 个数字都大于 00 ，在此固定指针 k 之后不可能再找到结果了。 当 k &gt; 0且nums[k] == nums[k - 1]时即跳过此元素nums[k]：因为已经将 nums[k - 1] 的所有组合加入到结果中，本次双指针搜索只会得到重复组合。i，j 分设在数组索引 (k, len(nums))(k,len(nums))两端，当i &lt; j时循环计算s = nums[k] + nums[i] + nums[j]，并按照以下规则执行双指针移动：</li>
-<li>1.当s &lt; 0时，i += 1并跳过所有重复的nums[i]；</li>
-<li>2.当s &gt; 0时，j -= 1并跳过所有重复的nums[j]；</li>
-<li>3.当s == 0时，记录组合[k, i, j]至res，执行i += 1和j -= 1并跳过所有重复的nums[i]和nums[j]，防止记录到重复组合。</li>
-</ul>
-<p><strong>动画:</strong><br><img src="https://img-blog.csdnimg.cn/20200520100258985.gif" alt=""></p>
-<h2 id="代码（C-）"><a href="#代码（C-）" class="headerlink" title="代码（C++）"></a>代码（C++）</h2><pre class=" language-cpp"><code class="language-cpp"><span class="token keyword">class</span> <span class="token class-name">Solution</span> <span class="token punctuation">{</span>
-<span class="token keyword">public</span><span class="token operator">:</span>
-    vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span>
-        <span class="token function">threeSum</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token operator">&amp;</span> nums<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        <span class="token comment" spellcheck="true">//1-排序，这里用了C++的sort接口</span>
-        <span class="token function">sort</span><span class="token punctuation">(</span>nums<span class="token punctuation">.</span><span class="token function">begin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span> nums<span class="token punctuation">.</span><span class="token function">end</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//res存放结果</span>
-        vector<span class="token operator">&lt;</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">>></span> res<span class="token punctuation">;</span>
-        <span class="token comment" spellcheck="true">//数组长度</span>
-        <span class="token keyword">int</span> Length <span class="token operator">=</span> nums<span class="token punctuation">.</span><span class="token function">size</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-        <span class="token keyword">if</span> <span class="token punctuation">(</span>Length <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span><span class="token keyword">return</span> res<span class="token punctuation">;</span>
-
-        <span class="token comment" spellcheck="true">//k是一个数组最左边的固定指针</span>
-        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">int</span> k <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> k <span class="token operator">&lt;</span> Length <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">;</span> k<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token keyword">break</span><span class="token punctuation">;</span><span class="token comment" spellcheck="true">//因为排序过了，nums[0]是数组中最小的元素了，它>0，即数组都是正数，三个值之和不可能为0了。]</span>
-            <span class="token comment" spellcheck="true">//跳过相同的nums[k]，避免重复。</span>
-            <span class="token keyword">if</span> <span class="token punctuation">(</span>k <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token keyword">continue</span><span class="token punctuation">;</span>
-            <span class="token comment" spellcheck="true">//i，j分别在数组索引（k，nums.size()）两端，通过控制i,j交替向中间移动，记录nums[k]+nums[i]+nums[j]=0</span>
-            <span class="token comment" spellcheck="true">//这里相当于两层嵌套循环，k指针的移动是外循环，i,j指针的移动是内循环</span>
-            <span class="token comment" spellcheck="true">//所以时间复杂度是O(n^2)</span>
-            <span class="token keyword">int</span> i <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> j <span class="token operator">=</span> Length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
-            <span class="token keyword">int</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
-            <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j<span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span>
-                <span class="token comment" spellcheck="true">//三数相加为负，跳过</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    <span class="token comment" spellcheck="true">//左指针i向右移一位</span>
-                    i<span class="token operator">++</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">//跳过相同的nums[i]</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>i<span class="token operator">++</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token comment" spellcheck="true">//结果为正，右指针向左移一位</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    j<span class="token operator">--</span><span class="token punctuation">;</span>
-                    <span class="token comment" spellcheck="true">//跳过重复的nums[j]</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>j<span class="token operator">--</span><span class="token punctuation">;</span>
-                <span class="token punctuation">}</span>
-                <span class="token comment" spellcheck="true">//结果为0，将符合要求的元素存入res容器</span>
-                <span class="token keyword">if</span> <span class="token punctuation">(</span>sum <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-                    res<span class="token punctuation">.</span><span class="token function">push_back</span><span class="token punctuation">(</span>vector<span class="token operator">&lt;</span><span class="token keyword">int</span><span class="token operator">></span><span class="token punctuation">{</span>nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
-                    i<span class="token operator">++</span><span class="token punctuation">;</span>
-                    j<span class="token operator">--</span><span class="token punctuation">;</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>i<span class="token operator">++</span><span class="token punctuation">;</span>
-                    <span class="token keyword">while</span> <span class="token punctuation">(</span>i <span class="token operator">&lt;</span> j <span class="token operator">&amp;&amp;</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>j <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span>j<span class="token operator">--</span><span class="token punctuation">;</span>
-
-                <span class="token punctuation">}</span>
-
-            <span class="token punctuation">}</span>
-        <span class="token punctuation">}</span>
-        <span class="token keyword">return</span> res<span class="token punctuation">;</span>
-    <span class="token punctuation">}</span>
-<span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre>
-<h2 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">threeSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> <span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> <span class="token punctuation">[</span><span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
-        nums<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        res<span class="token punctuation">,</span> k <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token number">0</span>
-        <span class="token keyword">for</span> k <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
-            <span class="token keyword">if</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span> <span class="token keyword">break</span> <span class="token comment" spellcheck="true"># 1. because of j > i > k.</span>
-            <span class="token keyword">if</span> k <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>k <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">continue</span> <span class="token comment" spellcheck="true"># 2. skip the same `nums[k]`.</span>
-            i<span class="token punctuation">,</span> j <span class="token operator">=</span> k <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">,</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span>
-            <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j<span class="token punctuation">:</span> <span class="token comment" spellcheck="true"># 3. double pointer</span>
-                s <span class="token operator">=</span> nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">+</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span>
-                <span class="token keyword">if</span> s <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
-                    i <span class="token operator">+=</span> <span class="token number">1</span>
-                    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> i <span class="token operator">+=</span> <span class="token number">1</span>
-                <span class="token keyword">elif</span> s <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
-                    j <span class="token operator">-=</span> <span class="token number">1</span>
-                    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j <span class="token operator">and</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> j <span class="token operator">-=</span> <span class="token number">1</span>
-                <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>k<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-                    i <span class="token operator">+=</span> <span class="token number">1</span>
-                    j <span class="token operator">-=</span> <span class="token number">1</span>
-                    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> i <span class="token operator">+=</span> <span class="token number">1</span>
-                    <span class="token keyword">while</span> i <span class="token operator">&lt;</span> j <span class="token operator">and</span> nums<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">==</span> nums<span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">:</span> j <span class="token operator">-=</span> <span class="token number">1</span>
-        <span class="token keyword">return</span> res</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>其实，我是看了这位作者的思路哒~ 记录下来，待日后查询。完结撒花~<br><img src="https://img-blog.csdnimg.cn/20200520100843412.gif" alt=""></p>
-<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>同时，贴上原作者的链接。<br>原作者：jyd<br>链接：<a href="https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/" target="_blank" rel="noopener">https://leetcode-cn.com/problems/3sum/solution/3sumpai-xu-shuang-zhi-zhen-yi-dong-by-jyd/</a><br>来源：力扣（LeetCode）</p>
+                <p>　　<img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1590213837335&di=41368d9c2cd972157409c3831cc818ce&imgtype=0&src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201803%2F09%2F20180309211424_fmbmu.thumb.700_0.jpg" style="zoom:150%;" /></p>
+<p>　　“……”</p>
+<p>　　“宿主，神火库……神火库里现在没有神火榜前三十的神火了……”</p>
+<p>　　乳白色的火苗尖晃了晃，似乎对于不能满足东方白感到很抱歉。</p>
+<p>　　“那前百的总该有吧？”</p>
+<p>　　“宿主，对不起！前百的神火也没有了！”</p>
+<p>　　乳白色的小火苗波动变得更大了，似乎是因为自家的神火库竟然连株前百神火都没有，而羞得无地自容。</p>
+<p>　　“……”</p>
+<p>　　东方白脸上的笑意凝固了。</p>
+<p>　　他突然有了一种不详的预感……</p>
+<p>　　“小火，你告诉我！神火库里还有多少种神火！”</p>
+<p>　　“那个，宿主……其实……其实神火库里现在就只有涅槃之炎了！就这一种！”</p>
+<p>　　尼玛！</p>
+<p>　　东方白的脸瞬间就黑了下来。</p>
+<p>　　这就是存储诸天万界神火的系统？搞半天就只有一团神火？</p>
+<p>　　东方白失望的摇了摇头，算了，拥有涅槃之炎这种比之纯质阳炎还要厉害的神火，自己也该知足了！</p>
+<p>　　自己就算只有涅槃之炎，相信也能站在这个世界的巅峰！</p>
+<p>　　东方白重新振作起来！</p>
+<p>　　“宿主，本系统曾经也是被称为诸天第一神器的存在！最巅峰时期，神火榜上的神火几乎全在系统的神火库里。”</p>
+<p>　　小火见东方白似乎看不起诸天神火系统，一时不愤的为系统正名起来。</p>
+<p>　　“最巅峰时期？”</p>
+<p>　　“没错！如果不是那一场大战……总之，本系统以前是诸天第一的神器，现在只要宿主重新收集到足够的神火，未必不能成为掌控诸天万火的无上存在！”</p>
+<p>　　那一场大战？</p>
+<p>　　东方白注意到了小火不小心透露出来的一截信息，虽然很好奇，但是更吸引他的是……</p>
+<p>　　“小火，你是说我可以通过收集其他神火，变得更强吗？”</p>
+<p>　　东方白兴奋了！真是柳暗花明又一村！本以为自己没有机会拥有第二道神火了，没想到转眼间，小火就给自己一个惊喜！</p>
+<p>　　“没错，宿主没有感觉到吗？自从你吸收完涅槃之炎后，体内的灵力就已经涨了一大截啦！”</p>
+<p>　　听闻此言，东方白闭上眼睛，默默感应了体内的灵力变化，这才震惊的发现，自己的丹田以前只是一个小水坑的灵力池，现在俨然已经变得如同一个小池塘般大小了！</p>
+<p>　　不大的池塘上方，还盘踞着一只小巧玲珑的血红色的火焰凤凰……</p>
+<p>　　小小的凤凰核心处是一株微微摆动的血色小火苗……</p>
+<p>　　东方白可以感应到它蕴含着无穷无尽的生命力！</p>
+<p>　　这就是涅槃之炎？</p>
+<p>　　东方白睁开了眼，满脸震惊！</p>
+<p>　　涅槃之炎！不就是凤凰一族涅槃重生的本源之火吗？</p>
+<p>　　没想到，一株涅槃之炎就让自己的灵力修为提升那么多，那如果能获得第二株神火……</p>
+<p>　　“小火，这个世界有其他神火存在吗？”</p>
+<p>　　东方白突然想到一个可能，这个世界不会根本就没有第二株其神火存在吧？</p>
+<p>　　如果有的话……</p>
+<p>　　东方白第一时间想到了自家祖传的灭妖神火―纯质阳炎！</p>
+<p>　　“这个世界有神火，我可以感应到一定距离内的神火波动……比如，在这里的附近就有一种强大的神火存在！虽然神火库里没有记载，但绝对是强于涅槃之炎的存在！最起码也能排进神火榜前二十！”</p>
+<p>　　小火的火苗尖剧烈摆动起来，看起来，她也对自己感应到结果不敢置信起来，没想到随便在一个地方就能感应到神火的波动？</p>
+<p>　　她还以为要等到东方白修炼到能打破世界壁垒后，才能在其他更强大的世界收集到神火呢！</p>
+<p>　　“涂山……有神火？！”</p>
+<p>　　东方白这下是真的惊讶了！他本想等回神火山庄后，让小火鉴定一下纯质阳炎是否是神火，没想到涂山就有一株？而且还是有神火榜前二十潜力的强大神火！</p>
+<p>　　“小火，你能感应到具体方位吗？”</p>
+<p>　　东方白急切问道，眼中的惊喜毫不掩饰的展露出来。</p>
+<p>　　“可以的，虽然有结界遮掩，但距离这么近，小火一下子就定位到它的确切方位了！宿主，你快退出精神世界，我们一起去采集这株神火吧！这下子，神火库终于不是只有一株神火啦！”</p>
+<p>　　小火也兴奋的催促起来！看来她对空荡荡的神火库怨念颇深呀！</p>
+<p>　　……</p>
+<p>　　安静的厢房内，盘坐在床上“修炼”的东方白猛地睁开双眼，深邃漆黑的瞳孔里，一道血色火焰在燃烧，一眨眼又消失得无影无踪了，仿佛一切都只是幻觉！</p>
+<p>　　东方白下了床，惊讶的看见一株乳白色小火苗，突然出现在半空中，不断摇曳着。</p>
+<p>　　“小火，你能从精神世界出来吗？”</p>
+<p>　　东方白还以为她只是虚幻不存在的，是系统方便和他交流才创造出来这么一个形象。</p>
+<p>　　“宿主，小火现在没有实体啦！这是虚拟投影，只有宿主才能看见小火，不这样做，如何给宿主指路呢？”</p>
+<p>　　“原来如此，既然别人看不见，那我们就行动吧！”</p>
+<p>　　东方白想到即将获得的第二株神火，心中的狂喜按耐不住的展现在脸上！</p>
+<p>　　第二株神火！</p>
+<p>　　好期待呢！</p>
 
             </div>
             <hr/>
@@ -583,7 +545,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/20/leetcode7/">http://Suzukazi.github.io/2020/05/20/leetcode7/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/23/novel7/">http://Suzukazi.github.io/2020/05/23/novel7/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -621,8 +583,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/leetcode/">
-                                    <span class="chip bg-color">leetcode</span>
+                                <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
+                                    <span class="chip bg-color">狐妖同人</span>
                                 </a>
                             
                         </div>
@@ -790,9 +752,10 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
                 <a href="/2020/05/23/novel7/">
                     <div class="card-image">
@@ -816,9 +779,9 @@
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -827,6 +790,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -845,25 +809,26 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/19/data-structure1/">
+                <a href="/2020/05/20/leetcode7/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【每天学算法】浅谈时间复杂度和空间复杂度">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【LeetCode刷题】三数之和">
                         
-                        <span class="card-title">【每天学算法】浅谈时间复杂度和空间复杂度</span>
+                        <span class="card-title">【LeetCode刷题】三数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            什么是复杂度？复杂度是衡量代码运行效率的重要的度量因素。 而复杂度主要就是指时间复杂度和空间复杂度。
-首先，时间复杂度的计算并不是计算程序具体运行的时间，而是算法执行语句的次数。当我们面前有多个算法时，我们可以通过计算时间复杂度，判断出哪一
+                            @TOC
+题目：三数之和给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有满足条件且不重复的三元组。注意： 答案中不可以包含重复的三元组。
+示例：给定
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-19
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-20
                             </span>
                         <span class="publish-author">
                             
@@ -876,8 +841,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%AF%8F%E5%A4%A9%E4%B8%80%E4%B8%AA%E7%AE%97%E6%B3%95%E5%B0%8F%E7%9F%A5%E8%AF%86/">
-                        <span class="chip bg-color">每天一个算法小知识</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
