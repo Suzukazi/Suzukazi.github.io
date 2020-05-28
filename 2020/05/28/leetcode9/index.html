@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LeetCode刷题】16. 最接近的三数之和, 青枫阁">
+    <meta name="keywords" content="【LeetCode刷题】167.两数之和 II - 输入有序数组, 青枫阁">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LeetCode刷题】16. 最接近的三数之和 | 青枫阁</title>
+    <title>【LeetCode刷题】167.两数之和 II - 输入有序数组 | 青枫阁</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -308,12 +308,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/22.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/5.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LeetCode刷题】16. 最接近的三数之和</h1>
+                    <h1 class="description center-align post-title">【LeetCode刷题】167.两数之和 II - 输入有序数组</h1>
                 </div>
             </div>
         </div>
@@ -446,7 +446,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2020-05-25
+                    2020-05-28
                 </div>
                 
 
@@ -463,60 +463,77 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <p>@<a href="目录">TOC</a></p>
-<h1 id="题目：最接近的三数之和"><a href="#题目：最接近的三数之和" class="headerlink" title="题目：最接近的三数之和"></a>题目：最接近的三数之和</h1><p>给定一个包括 n 个整数的数组 nums 和 一个目标值 target。找出 nums 中的三个整数，使得它们的和与 target 最接近。返回这三个数的和。假定每组输入只存在唯一答案。</p>
-<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><pre class=" language-cpp"><code class="language-cpp">例如，给定数组 nums <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">-</span><span class="token number">1</span>，<span class="token number">2</span>，<span class="token number">1</span>，<span class="token operator">-</span><span class="token number">4</span><span class="token punctuation">]</span><span class="token punctuation">,</span> 和 target <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">.</span>
-
-与 target 最接近的三个数的和为 <span class="token number">2</span><span class="token punctuation">.</span> <span class="token punctuation">(</span><span class="token operator">-</span><span class="token number">1</span> <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">+</span> <span class="token number">1</span> <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">.</span></code></pre>
-<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><p>依旧是<strong>双指针</strong>的问题。</p>
+<h1 id="题目：167-两数之和-II-输入有序数组"><a href="#题目：167-两数之和-II-输入有序数组" class="headerlink" title="题目：167.两数之和 II - 输入有序数组"></a>题目：167.两数之和 II - 输入有序数组</h1><p>给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。<br>函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。</p>
+<p><strong>说明:</strong></p>
 <ul>
-<li>将<strong>nums排序</strong>（从小到大)。</li>
-<li>用<strong>双指针</strong>：<br>1&gt;.先定义3个指针，一个固定指针<strong>i</strong>，两个左右指针<strong>L,R</strong>；<br>2&gt;.令i固定数组的最左边，作为新动态数组的左边界,即<strong>i=0</strong>;</li>
-<li>同时，<strong>L=i+1,R=len(nums) -1</strong>,即分别指向新数组的两端；</li>
-<li>用i遍历数组，作为外循环，不断的将左边界向右推进，逐渐缩小新数组的长度;</li>
-<li>比较 <strong>sum=nums[i]+nums[L]+nums[R]</strong> 和<strong>目标值target</strong>的大小;</li>
-<li><strong>sum==0</strong>, 符合要求，存入res,之后，L+1，R-1;</li>
-<li><strong>sum&lt;0</strong>, L+1;<br>(因为数组是从小到大排序过的,当sum&lt;0，三个数整体来说是偏小的，自然要让三数中最小的数nums[L]变大,即指针L向右移动)</li>
-<li><strong>sum&gt;0</strong>,R-1;<br>(同理，sum偏大,就让最大的值nums[R]变小)</li>
+<li>返回的下标值（index1 和 index2）不是从零开始的。</li>
+<li>你可以假设每个输入只对应唯一的答案，而且你不可以重复使用相同的元素。</li>
+</ul>
+<h2 id="示例："><a href="#示例：" class="headerlink" title="示例："></a>示例：</h2><pre class=" language-cpp"><code class="language-cpp">输入<span class="token operator">:</span> numbers <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">7</span><span class="token punctuation">,</span> <span class="token number">11</span><span class="token punctuation">,</span> <span class="token number">15</span><span class="token punctuation">]</span><span class="token punctuation">,</span> target <span class="token operator">=</span> <span class="token number">9</span>
+输出<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">]</span>
+解释<span class="token operator">:</span> <span class="token number">2</span> 与 <span class="token number">7</span> 之和等于目标数 <span class="token number">9</span> 。因此 index1 <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> index2 <span class="token operator">=</span> <span class="token number">2</span> 。
+</code></pre>
+<h2 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h2><ul>
+<li>用<strong>双指针</strong>：<br>1&gt;.先定义2个指针，分别是左右指针<strong>L,R</strong>；<br>2&gt;.令<strong>L=0,R=len(nums) -1</strong>,即分别指向数组的两端；</li>
+<li>判断 <strong>sum=nums[L]+nums[R]</strong> 的大小;</li>
+<li><strong>sum==target</strong>, 符合要求，输出下标,之后，L+1，R-1;</li>
+<li><strong>sum&lt;target</strong>, L+1;<br>(因为数组是从小到大排序过的,当sum&lt;0，两数之和整体来说是偏小的，自然要让两数中最小的数nums[L]变大,即指针L向右移动)</li>
+<li><strong>sum&gt;target</strong>,R-1;<br>(同理，sum偏大,就让最大的值nums[R]变小)</li>
 </ul>
 <h2 id="代码（Python）"><a href="#代码（Python）" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
-    <span class="token keyword">def</span> <span class="token function">threeSumClosest</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> int<span class="token punctuation">:</span>
-        <span class="token comment" spellcheck="true">#错误判断，数组长度小于3，直接返回</span>
+    <span class="token keyword">def</span> <span class="token function">twoSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> numbers<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">,</span> target<span class="token punctuation">:</span> int<span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">:</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">not</span> numbers<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
+        L<span class="token operator">=</span><span class="token number">0</span>
+        R<span class="token operator">=</span>len<span class="token punctuation">(</span>numbers<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>
+        <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R<span class="token punctuation">)</span><span class="token punctuation">:</span>
+            sum<span class="token operator">=</span>numbers<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">+</span>numbers<span class="token punctuation">[</span>R<span class="token punctuation">]</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>sum<span class="token operator">==</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> <span class="token punctuation">[</span> L<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">,</span>R<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span>
+            <span class="token keyword">elif</span><span class="token punctuation">(</span>sum<span class="token operator">></span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
+                R<span class="token operator">=</span>R<span class="token number">-1</span>
+            <span class="token keyword">else</span><span class="token punctuation">:</span>
+                 L<span class="token operator">=</span> L<span class="token operator">+</span><span class="token number">1</span>
+<span class="token comment" spellcheck="true">#        return [-1,-1]</span></code></pre>
+<p>相信有的小伙伴已经发现了。当数组中有重复的元素时，其实是可以排除掉的。<br>更改代码如下：</p>
+<h2 id="代码（Python）-1"><a href="#代码（Python）-1" class="headerlink" title="代码（Python）"></a>代码（Python）</h2><pre class=" language-python"><code class="language-python"><span class="token keyword">class</span> <span class="token class-name">Solution</span><span class="token punctuation">:</span>
+    <span class="token keyword">def</span> <span class="token function">threeSum</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> nums<span class="token punctuation">:</span> List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">-</span><span class="token operator">></span> List<span class="token punctuation">[</span>List<span class="token punctuation">[</span>int<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">:</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
         <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token operator">not</span> nums <span class="token operator">or</span> len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">&lt;</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
             <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
         nums<span class="token punctuation">.</span>sort<span class="token punctuation">(</span><span class="token punctuation">)</span>
-        <span class="token comment" spellcheck="true">#给res赋初值</span>
-        res<span class="token operator">=</span>nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span>
-        <span class="token comment" spellcheck="true">#外循环</span>
+        res<span class="token operator">=</span><span class="token punctuation">[</span><span class="token punctuation">]</span>
+
         <span class="token keyword">for</span> i <span class="token keyword">in</span> range<span class="token punctuation">(</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">:</span> 
+            <span class="token comment" spellcheck="true">#nums[i]都>0,三数都是正数，sum不可能=0</span>
+            <span class="token keyword">if</span><span class="token punctuation">(</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">></span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
+                <span class="token keyword">return</span> res
             <span class="token comment" spellcheck="true">#排除重复的nums[i]</span>
             <span class="token keyword">if</span><span class="token punctuation">(</span>i<span class="token operator">></span><span class="token number">0</span> <span class="token operator">and</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>i<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                 <span class="token keyword">continue</span>
-            <span class="token comment" spellcheck="true">#初始化左右指针</span>
             L<span class="token operator">=</span>i<span class="token operator">+</span><span class="token number">1</span>
-            R<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>   
-            <span class="token comment" spellcheck="true">#边界判断       </span>
+            R<span class="token operator">=</span>len<span class="token punctuation">(</span>nums<span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span>  
             <span class="token keyword">while</span> L<span class="token operator">&lt;</span>R<span class="token punctuation">:</span>  
-                sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span>  
-
-                <span class="token keyword">if</span> abs<span class="token punctuation">(</span>sum<span class="token operator">-</span>target<span class="token punctuation">)</span><span class="token operator">&lt;</span>abs<span class="token punctuation">(</span>res<span class="token operator">-</span>target<span class="token punctuation">)</span><span class="token punctuation">:</span>
-                    res<span class="token operator">=</span>sum
-
-                <span class="token comment" spellcheck="true">#sum偏小，L向右移动</span>
-                <span class="token keyword">if</span> sum<span class="token operator">-</span>target <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                sum <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">+</span>nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span>                   
+                <span class="token keyword">if</span> sum <span class="token operator">==</span><span class="token number">0</span><span class="token punctuation">:</span>
+                    res<span class="token punctuation">.</span>append<span class="token punctuation">(</span><span class="token punctuation">[</span>nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token punctuation">,</span>nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
                     L<span class="token operator">=</span>L<span class="token operator">+</span><span class="token number">1</span>
-                <span class="token comment" spellcheck="true">#sum偏大，L向左移动</span>
-                <span class="token keyword">elif</span> sum<span class="token operator">-</span>target <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">:</span>
                     R<span class="token operator">=</span>R<span class="token number">-1</span>
+                <span class="token keyword">elif</span> sum <span class="token operator">&lt;</span> <span class="token number">0</span><span class="token punctuation">:</span>
+                    L<span class="token operator">=</span>L<span class="token operator">+</span><span class="token number">1</span>
                 <span class="token keyword">else</span><span class="token punctuation">:</span>
-                    <span class="token keyword">return</span> target
-
+                    R<span class="token operator">=</span>R<span class="token number">-1</span>
                 <span class="token comment" spellcheck="true">#排除重复的nums[L],nums[R]</span>
                 <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R <span class="token operator">and</span> nums<span class="token punctuation">[</span>L<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>L<span class="token operator">+</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                     L<span class="token operator">=</span>L<span class="token operator">+</span><span class="token number">1</span>
                 <span class="token keyword">while</span><span class="token punctuation">(</span>L<span class="token operator">&lt;</span>R <span class="token operator">and</span> nums<span class="token punctuation">[</span>R<span class="token punctuation">]</span><span class="token operator">==</span>nums<span class="token punctuation">[</span>R<span class="token number">-1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">:</span>
                     R<span class="token operator">=</span>R<span class="token number">-1</span>
+
         <span class="token keyword">return</span> res</code></pre>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>最接近的最接近的三数之和其实和三数之和几乎一样！同样是双指针的应用。好了，没看懂的可以回头看看我的上一篇博客<a href="https://blog.csdn.net/qq_41810991/article/details/106228902" target="_blank" rel="noopener">三数之和</a>完结撒花~<br><img src="https://img-blog.csdnimg.cn/20200520100843412.gif" alt=""></p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="https://img-blog.csdnimg.cn/20200528085822705.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>好了，这是一道双指针的简单问题，其实，还有很多其他解法，比如哈希表，二分查找！有兴趣的同学可以去找找。完结撒花~<br><img src="https://img-blog.csdnimg.cn/20200520100843412.gif" alt=""></p>
+<h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><p>同时，贴上咱的个人博客，欢迎客官大老爷们来访~<br><a href="http://www.zhangfeng.run/" target="_blank" rel="noopener"><strong>青枫阁</strong></a></p>
 
             </div>
             <hr/>
@@ -542,7 +559,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://Suzukazi.github.io/2020/05/25/leetcode8/">http://Suzukazi.github.io/2020/05/25/leetcode8/</a>
+                    <a href="http://Suzukazi.github.io/2020/05/28/leetcode9/">http://Suzukazi.github.io/2020/05/28/leetcode9/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -749,30 +766,32 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/2020/05/28/leetcode10/">
+                <a href="/2020/05/28/leetcode9/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【LeetCode刷题】18.四数之和">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【LeetCode刷题】167.两数之和 II - 输入有序数组">
                         
-                        <span class="card-title">【LeetCode刷题】18.四数之和</span>
+                        <span class="card-title">【LeetCode刷题】167.两数之和 II - 输入有序数组</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
                             @TOC
-题目：18.四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不
+题目：167.两数之和 II - 输入有序数组给定一个已按照升序排列 的有序数组，找到两个数使得它们相加之和等于目标数。函数应该返回这两个下标值 index1 和 index2，其中 index1 必须小于 index2。
+说明:
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2020-05-28
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-28
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-user fa-fw"></i>
@@ -781,6 +800,7 @@
                         </span>
                     </div>
                 </div>
+
                 
                 <div class="card-action article-tags">
                     
@@ -799,30 +819,25 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2020/05/23/novel7/">
+                <a href="/2020/05/28/leetcode10/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="第七章 空空如也的神火库">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【LeetCode刷题】18.四数之和">
                         
-                        <span class="card-title">第七章 空空如也的神火库</span>
+                        <span class="card-title">【LeetCode刷题】18.四数之和</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            　　
-　　“……”
-　　“宿主，神火库……神火库里现在没有神火榜前三十的神火了……”
-　　乳白色的火苗尖晃了晃，似乎对于不能满足东方白感到很抱歉。
-　　“那前百的总该有吧？”
-　　“宿主，对不起！前百的神火也没有了！”
-　　乳白色的小火苗波
+                            @TOC
+题目：18.四数之和给定一个包含 n 个整数的数组 nums 和一个目标值 target，判断 nums 中是否存在四个元素 a，b，c 和 d ，使得 a + b + c + d 的值与 target 相等？找出所有满足条件且不
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-23
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-05-28
                             </span>
                         <span class="publish-author">
                             
@@ -835,8 +850,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%8B%90%E5%A6%96%E5%90%8C%E4%BA%BA/">
-                        <span class="chip bg-color">狐妖同人</span>
+                    <a href="/tags/leetcode/">
+                        <span class="chip bg-color">leetcode</span>
                     </a>
                     
                 </div>
